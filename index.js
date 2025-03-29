@@ -4,6 +4,9 @@
 
 const express = require("express");
 const app = express();
+// Using Node.js `require()`
+const mongoose = require("mongoose");
+
 app.listen(3000, () => {
   console.log("server started on port 3000");
 });
@@ -18,3 +21,17 @@ app.get("/", (req, res) => {
 
 // npm i nodemon -D
 // to install kinda live server, so that we dont have to stop and run the server again and again
+
+// i4OckhKzwEkVqh01;
+// admin;
+
+mongoose
+  .connect(
+    "mongodb+srv://vnimish20:i4OckhKzwEkVqh01@basic-crud-backend.lhioyux.mongodb.net/?retryWrites=true&w=majority&appName=basic-crud-backend"
+  )
+  .then(() => {
+    console.log("connected to db");
+  })
+  .catch(() => {
+    console.log("error connecting to db");
+  });
